@@ -1,0 +1,28 @@
+{
+  "name": "data-faker-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CLI para gerar dados fictícios em CSV, JSON e SQL com Faker.js",
+  "license": "MIT",
+  "repository": "github:lucaspereirasouzat/data-faker-cli",
+  "engines": { "node": "^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0" },
+  "files": ["dist"],
+  "scripts": {
+    "build": "bun build index.ts --target=node --packages=external --outfile dist/index.js",
+    "start": "bun run index.ts",
+    "generate": "bun run index.ts generate",
+    "list-types": "bun run index.ts list-types",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
+  },
+  "bin": {
+    "data-faker": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "commander": "^14.0.3"
+  }
+}
